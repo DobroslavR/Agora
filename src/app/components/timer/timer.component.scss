@@ -1,0 +1,40 @@
+@import 'main';
+
+.timer {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  background-color: $white-color;
+  display: flex;
+  align-items: center;
+  padding: PxToEm(20) 0;
+  border-radius: PxToEm(10);
+
+  &__item {
+    padding: 0 PxToEm(25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:not(:last-child) {
+      border-right: 1px solid $dark-color-light-6;
+    }
+  }
+
+  $timer-counter-fzs: 24;
+
+  &__counter {
+    color: $dark-color;
+    font-size: PxToEm($timer-counter-fzs);
+    letter-spacing: 1px;
+    margin-bottom: PxToEm(5, $timer-counter-fzs);
+    font-weight: 500;
+  }
+
+  $timer-time-unit-fzs: 12;
+
+  &__time-unit {
+    color: $primary-color;
+    font-size: PxToEm($timer-time-unit-fzs);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+}

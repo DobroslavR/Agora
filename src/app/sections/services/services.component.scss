@@ -1,0 +1,96 @@
+@import 'main';
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include mq(lg, max) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(xs, max) {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    padding: PxToEm(80) PxToEm(70);
+    background: $white-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid $dark-color-light-5;
+
+    @include mq(xxl, max) {
+      padding-top: PxToEm(60);
+      padding-bottom: PxToEm(40);
+    }
+
+    @include mq(lg, max) {
+      border-right: none;
+      border-bottom: 1px solid $dark-color-light-5;
+      &:nth-child(odd) {
+        border-right: 1px solid $dark-color-light-5;
+      }
+    }
+
+    @include mq(xs, max) {
+      border-right: none;
+      &:nth-child(odd) {
+        border-right: none;
+      }
+    }
+
+    &:hover a {
+      opacity: 1;
+      top: 0;
+    }
+  }
+
+  &__icon {
+    width: auto;
+    height: PxToEm(50);
+    margin-bottom: PxToEm(30);
+  }
+
+  $info-box-heading-fzs: 18;
+
+  &__heading {
+    font-size: PxToEm($info-box-heading-fzs);
+    margin-bottom: PxToEm(15, $info-box-heading-fzs);
+    color: $dark-color;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+  }
+
+  $info-box-text-fzs: 13;
+
+  &__text {
+    font-size: PxToEm($info-box-text-fzs);
+    margin-bottom: PxToEm(30, $info-box-text-fzs);
+    color: $dark-color-light-3;
+    font-family: 'Poppins', sans-serif;
+    line-height: 2;
+  }
+
+  $info-box-link-fzs: 13;
+
+  &__link {
+    display: flex;
+    color: $primary-color;
+    font-family: 'Poppins', sans-serif;
+    font-size: PxToEm($info-box-link-fzs);
+    font-weight: 500;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    top: 10px;
+
+    &-icon {
+      color: $primary-color;
+      margin-left: PxToEm(10, $info-box-link-fzs);
+    }
+  }
+}

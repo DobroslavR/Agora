@@ -1,0 +1,44 @@
+@import "main";
+
+.header {
+  height: PxToEm(75);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $primary-color;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  position: relative;
+
+  @include mq(xxs, max) {
+    padding: 0 PxToEm(20);
+  }
+
+  &__hamburger {
+    display: none;
+
+    @include mq(xxs, max) {
+      display: block;
+    }
+  }
+
+  &__left,
+  &__right {
+    @include mq(xxs, max) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    padding: PxToEm(28);
+
+    &--border-left {
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    &--border-right {
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  }
+}

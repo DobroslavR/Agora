@@ -1,0 +1,12 @@
+@import 'main';
+
+$logo-fsz: 21;
+
+.logo {
+  color: $white-color;
+  font-weight: 700;
+  font-size: PxToEm($logo-fsz);
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+}

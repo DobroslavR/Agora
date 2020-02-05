@@ -1,0 +1,23 @@
+// Media Query mixin
+
+$breakpoints: (
+  'xxs': 480px,
+  'xs': 576px,
+  'sm': 768px,
+  'md': 992px,
+  'lg': 1170px,
+  'xl': 1360px,
+  'xxl': 1500px
+);
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}

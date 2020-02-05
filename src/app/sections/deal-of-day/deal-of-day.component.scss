@@ -1,0 +1,95 @@
+@import 'main';
+
+.deal-of-day {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+
+  @include mq(sm, max) {
+    grid-template-columns: 1fr;
+  }
+
+  &__content {
+    padding: 10vw 5vw;
+    background-color: $dark-color-light-6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    max-height: PxToEm(550);
+  }
+
+  &__img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    max-height: PxToEm(550);
+
+    @include mq(sm, max) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: fill;
+
+    /* @include mq(md, max) {
+      display: none;
+    } */
+  }
+
+  $deal-of-day-mini-heading-fzs: 14;
+
+  &__mini-heading {
+    color: $dark-color-light-4;
+    text-transform: uppercase;
+    font-size: PxToEm($deal-of-day-mini-heading-fzs);
+    margin-bottom: PxToEm(20, $deal-of-day-mini-heading-fzs);
+    font-weight: 500;
+  }
+
+  $deal-of-day-heading-fzs: 36;
+
+  &__heading {
+    color: $dark-color;
+    font-size: PxToEm($deal-of-day-heading-fzs);
+    margin-bottom: PxToEm(20, $deal-of-day-heading-fzs);
+    font-family: 'Oswald', sans-serif;
+  }
+
+  $deal-of-day-text-fzs: 18;
+
+  &__text {
+    font-size: PxToEm($deal-of-day-text-fzs);
+    margin-bottom: PxToEm(40, $deal-of-day-text-fzs);
+    color: $dark-color-light-3;
+    line-height: 1.65;
+  }
+
+  &__price-history {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: PxToEm(70);
+  }
+
+  $deal-of-day-price-fzs: 48;
+
+  &__price {
+    color: $primary-color;
+    font-weight: 700;
+    font-size: PxToEm($deal-of-day-price-fzs);
+
+    $deal-of-day-price-strike-fzs: 30;
+
+    &--strike {
+      text-decoration: line-through;
+      font-weight: 500;
+      color: $dark-color;
+      font-size: PxToEm($deal-of-day-price-strike-fzs);
+      margin-left: PxToEm(35, $deal-of-day-price-strike-fzs);
+    }
+  }
+}

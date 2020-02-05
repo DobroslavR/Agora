@@ -1,0 +1,15 @@
+<section class="services-list">
+  <div class="services-list__item" *ngFor="let service of serviceData">
+    <img
+      [src]="service.iconUrl"
+      [alt]="service.heading"
+      class="services-list__icon"
+    />
+    <h5 class="services-list__heading">{{ service.heading }}</h5>
+    <span class="services-list__text">{{ service.text }}</span>
+    <a class="services-list__link">
+      {{ service.linkText }}
+      <!--  <fa-icon [icon]="faAngleRight" class="services-list__link-icon"></fa-icon> -->
+    </a>
+  </div>
+</section>

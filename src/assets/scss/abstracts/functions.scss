@@ -1,0 +1,7 @@
+// Global functions
+//
+//
+
+@function PxToEm($pixels, $context: 16) {
+  @return ($pixels / $context) + em;
+}

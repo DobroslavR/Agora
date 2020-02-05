@@ -1,0 +1,21 @@
+@import 'main';
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+
+  $breadcrumb-text-fsz: 12;
+
+  &__item {
+    color: $dark-color-light-5;
+    font-size: PxToEm($breadcrumb-text-fsz);
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+
+    &:not(:last-child):after {
+      content: '>';
+      margin-left: PxToEm(8, $breadcrumb-text-fsz);
+      margin-right: PxToEm(8, $breadcrumb-text-fsz);
+    }
+  }
+}
